@@ -1,6 +1,4 @@
-## [Devias Kit - React](https://material-kit-react.devias.io/)
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 [![Devias Kit - React](https://github.com/devias-io/material-kit-react/blob/main/public/assets/thumbnail.png)](https://material-kit-react.devias.io/)
 
