@@ -9,6 +9,7 @@ import { Plus as PlusIcon } from '@phosphor-icons/react/dist/ssr/Plus';
 import { type AxiosResponse } from 'axios';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
+import { unknown } from 'zod';
 
 import { CustomersFilters } from '@/components/dashboard/client/customers-filters';
 import { CustomersTable } from '@/components/dashboard/client/customers-table';
@@ -91,7 +92,11 @@ export default function Clients(): React.JSX.Element {
 
       if (selectedFile) formData.append('image', selectedFile);
       Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value);
+        if (typeof value === 'string' || value instanceof Blob) {
+          formData.append(key, value);
+        } else {
+          console.error(`Invalid type for ${key}`);
+        }
       });
 
       const response: AxiosResponse<Client> = await axios.post('/clients', formData, {

@@ -48,13 +48,15 @@ function noop(): void {
 
 export interface Produit {
   id: string;
-  image: File | null;
+  image: string;
+  image_url: string;
   name: string;
   description: string;
   initPrice: string;
   price: string;
   quantity: string;
   created_at: string;
+  updated_at: string;
 }
 
 export function CustomersTable(): React.JSX.Element {
@@ -85,7 +87,9 @@ export function CustomersTable(): React.JSX.Element {
   const [selectedProduct, setSelectedProduct] = useState<Produit | undefined>({
     id: '',
     name: '',
-    image: null,
+    image: '',
+    image_url: '',
+    updated_at: '',
     description: '',
     quantity: '',
     initPrice: '',
@@ -102,11 +106,22 @@ export function CustomersTable(): React.JSX.Element {
             size: rowsPerPage,
           },
         } as unknown as Record<string, string>)
-        .then((res: AxiosResponse<AxiosResponse<Produit[]>>) => {
-          setProducts(res.data.data);
-          console.log(page);
-          console.log(res.data);
-          setTotal(res.data.total);
+        .then((res: AxiosResponse) => {
+          const responseData: unknown = res.data;
+          const tot: number = res.data.total;
+          if (responseData && typeof responseData === 'object') {
+            const { data, t } = responseData as { data: Produit[]; t: number };
+            if (data && Array.isArray(data)) {
+              setProducts(data);
+              console.log(page);
+              console.log(responseData);
+              setTotal(tot);
+            } else {
+              console.error('Invalid data format:', data);
+            }
+          } else {
+            console.error('Invalid response data:', responseData);
+          }
         })
         .catch((e: unknown) => console.log(e));
     };
@@ -144,10 +159,19 @@ export function CustomersTable(): React.JSX.Element {
         },
       } as unknown as Record<string, string>)
       .then((res: AxiosResponse<AxiosResponse<Produit[]>>) => {
-        setProducts(res.data.data);
-        console.log(page);
-        console.log(res.data);
-        setTotal(res.data.total);
+        const responseData: unknown = res.data;
+        console.log('here');
+        if (responseData && typeof responseData === 'object') {
+          const { data, t } = responseData as { data: Produit[]; t: number };
+          if (data && Array.isArray(data)) {
+            setProducts(data);
+            setTotal(t);
+          } else {
+            console.error('Invalid data format:', data);
+          }
+        } else {
+          console.error('Invalid response data:', responseData);
+        }
       })
       .catch((e: unknown) => console.log(e));
   };
@@ -324,7 +348,7 @@ export function CustomersTable(): React.JSX.Element {
                   <TableCell>
                     <Stack sx={{ alignItems: 'center' }} direction="row" spacing={2}>
                       {row.image && typeof row.image === 'string' ? (
-                        <Avatar src={row.image} />
+                        <Avatar src={row.image.startsWith('http') ? row.image : row.image_url} />
                       ) : (
                         <Avatar src="default-avatar.png" /> // Provide a default avatar image
                       )}

@@ -62,7 +62,7 @@ export function AccountDetailsForm(): React.JSX.Element {
       const formData = new FormData();
 
       // if (selectedFile) formData.append('image', selectedFile);
-      Object.entries(data).forEach(([key, value]) => {
+      Object.entries(data).forEach(([key, value]: [string, string | Blob]) => {
         formData.append(key, value);
       });
 

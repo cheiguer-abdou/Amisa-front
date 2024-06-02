@@ -20,7 +20,7 @@ export default function Account(): React.JSX.Element {
           <AccountInfo />
         </Grid>
         <Grid lg={8} md={6} xs={12}>
-          <AccountDetailsForm user={user} />
+          <AccountDetailsForm />
         </Grid>
       </Grid>
     </Stack>

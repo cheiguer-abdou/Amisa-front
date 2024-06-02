@@ -51,6 +51,8 @@ module.exports = {
     ],
 
     // Deactivated
+    "@typescript-eslint/restrict-template-expressions": 'off',
+    "@typescript-eslint/no-unsafe-argument": 'off',
     "@typescript-eslint/no-confusing-void-expression": 'off',
     '@typescript-eslint/dot-notation': 'off', // paths are used with a dot notation
     '@typescript-eslint/no-misused-promises': 'off', // onClick with async fails

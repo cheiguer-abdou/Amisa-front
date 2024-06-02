@@ -17,6 +17,8 @@ import dayjs from 'dayjs';
 
 import { paths } from '@/paths';
 
+import { Produit } from '../produit/customers-table';
+
 export interface Product {
   id: string;
   image: string;
@@ -25,11 +27,12 @@ export interface Product {
 }
 
 export interface LatestProductsProps {
-  products?: Product[];
+  products?: Produit[];
   sx?: SxProps;
 }
 
 export function LatestProducts({ products = [], sx }: LatestProductsProps): React.JSX.Element {
+  console.log(products);
   return (
     <Card sx={sx}>
       <CardHeader title="Latest products" />
@@ -39,7 +42,11 @@ export function LatestProducts({ products = [], sx }: LatestProductsProps): Reac
           <ListItem divider={index < products.length - 1} key={product.id}>
             <ListItemAvatar>
               {product.image ? (
-                <Box component="img" src={product.image} sx={{ borderRadius: 1, height: '48px', width: '48px' }} />
+                <Box
+                  component="img"
+                  src={product.image.startsWith('http') ? product.image : product.image_url}
+                  sx={{ borderRadius: 1, height: '48px', width: '48px' }}
+                />
               ) : (
                 <Box
                   sx={{
@@ -54,7 +61,7 @@ export function LatestProducts({ products = [], sx }: LatestProductsProps): Reac
             <ListItemText
               primary={product.name}
               primaryTypographyProps={{ variant: 'subtitle1' }}
-              secondary={`Updated ${dayjs(product.updatedAt).format('MMM D, YYYY')}`}
+              secondary={`Updated ${dayjs(product.updated_at).format('MMM D, YYYY')}`}
               secondaryTypographyProps={{ variant: 'body2' }}
             />
             <IconButton edge="end">
