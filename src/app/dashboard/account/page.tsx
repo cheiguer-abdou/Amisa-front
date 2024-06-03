@@ -11,7 +11,7 @@ import { AccountInfo } from '@/components/dashboard/account/account-info';
 
 import Account from './account';
 
-export const metadata = { title: `Account | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Account | Dashboard | Amisa` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return <Account />;

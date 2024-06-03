@@ -164,7 +164,7 @@ export default function Orders(): React.JSX.Element {
     <Stack spacing={3}>
       <Stack direction="row" spacing={3}>
         <Stack spacing={1} sx={{ flex: '1 1 auto' }}>
-          <Typography variant="h4">Orders</Typography>
+          <Typography variant="h4">Achats</Typography>
           {/* <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                 <Button color="inherit" startIcon={<UploadIcon fontSize="var(--icon-fontSize-md)" />}>
                   Import
@@ -176,7 +176,7 @@ export default function Orders(): React.JSX.Element {
         </Stack>
         <div>
           <Button startIcon={<PlusIcon fontSize="var(--icon-fontSize-md)" />} variant="contained" onClick={handleOpen}>
-            Add
+            Ajouter
           </Button>
         </div>
       </Stack>
@@ -191,7 +191,7 @@ export default function Orders(): React.JSX.Element {
           <Card>
             <Box sx={style}>
               <h2 id="modal-modal-title" style={{ textAlign: 'center' }}>
-                Add Order
+                Ajouter
               </h2>
               <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={2}>

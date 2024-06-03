@@ -16,7 +16,7 @@ export function CustomersFilters({ filterOrder, onFilterChange }: OrderProps): R
         onChange={onFilterChange}
         defaultValue=""
         fullWidth
-        placeholder="Search order by client name or product"
+        placeholder="Rechercher par nom de client ou produit"
         startAdornment={
           <InputAdornment position="start">
             <MagnifyingGlassIcon fontSize="var(--icon-fontSize-md)" />

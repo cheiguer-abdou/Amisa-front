@@ -17,7 +17,7 @@ export function CustomersFilters({ filterProduct, onFilterChange }: ProductProps
         onChange={onFilterChange}
         defaultValue=""
         fullWidth
-        placeholder="Search product"
+        placeholder="Rechercher produit"
         startAdornment={
           <InputAdornment position="start">
             <MagnifyingGlassIcon fontSize="var(--icon-fontSize-md)" />

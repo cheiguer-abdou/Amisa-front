@@ -5,7 +5,7 @@ import { config } from '@/config';
 
 import Clients from './clients';
 
-export const metadata = { title: `Clients | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Clients | Dashboard | Amisa` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return <Clients />;

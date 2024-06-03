@@ -320,8 +320,8 @@ export function CustomersTable(): React.JSX.Element {
               </TableCell>
               <TableCell>Nom</TableCell>
               <TableCell>Description</TableCell>
-              <TableCell>Initial Price</TableCell>
-              <TableCell>Price</TableCell>
+              <TableCell>Prix initial</TableCell>
+              <TableCell>Prix</TableCell>
               <TableCell>Quantite</TableCell>
               <TableCell>Date creation</TableCell>
               <TableCell>Action</TableCell>
@@ -401,7 +401,7 @@ export function CustomersTable(): React.JSX.Element {
           <Card>
             <Box sx={style}>
               <h2 id="modal-modal-title" style={{ textAlign: 'center' }}>
-                Update Product
+                Modifier Produit
               </h2>
               <FormProvider methods={methods} onSubmit={handleSubmit(onUpdate)}>
                 <Grid container spacing={2}>
@@ -474,13 +474,13 @@ export function CustomersTable(): React.JSX.Element {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">Confirm Deletion</DialogTitle>
+        <DialogTitle id="alert-dialog-title">Confirmation de la suppression </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">Are you sure you want to delete?</DialogContentText>
+          <DialogContentText id="alert-dialog-description">Etes vous sur que vous voulez supprimer?</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setIsModalDelete(false)}>Cancel</Button>
-          <Button onClick={() => handleDeleteClick(selectedId)}>Yes</Button>
+          <Button onClick={() => setIsModalDelete(false)}>Non</Button>
+          <Button onClick={() => handleDeleteClick(selectedId)}>Oui</Button>
         </DialogActions>
       </Dialog>
     </Card>

@@ -5,7 +5,7 @@ import { config } from '@/config';
 
 import Dashboard from './dashboard';
 
-export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Overview | Dashboard | Amisa` } satisfies Metadata;
 
 export interface Budget {
   budget: string;

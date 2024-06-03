@@ -119,7 +119,7 @@ export function AccountDetailsForm(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <Stack spacing={1}>
-                <RHFTextField name="phone" label="Phone" defaultValue={defaultValues.phone || ''} type="tel" />
+                <RHFTextField name="phone" label="Telephone" defaultValue={defaultValues.phone || ''} type="tel" />
               </Stack>
             </Grid>
           </Grid>
@@ -127,7 +127,7 @@ export function AccountDetailsForm(): React.JSX.Element {
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
           <Button variant="contained" type="submit">
-            Save details
+            Enregistrer
           </Button>
         </CardActions>
       </Card>

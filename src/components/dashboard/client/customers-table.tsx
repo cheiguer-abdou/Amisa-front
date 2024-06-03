@@ -279,7 +279,7 @@ export function CustomersTable(): React.JSX.Element {
                 />
               </TableCell>
               <TableCell>Nom</TableCell>
-              <TableCell>phone</TableCell>
+              <TableCell>Telephone</TableCell>
               <TableCell>Date creation</TableCell>
               <TableCell>Action</TableCell>
             </TableRow>
@@ -346,7 +346,7 @@ export function CustomersTable(): React.JSX.Element {
           <Card>
             <Box sx={style}>
               <h2 id="modal-modal-title" style={{ textAlign: 'center' }}>
-                Update Product
+                Modifier Produit
               </h2>
               <FormProvider methods={methods} onSubmit={handleSubmit(onUpdate)}>
                 <Grid container spacing={2}>
@@ -361,10 +361,10 @@ export function CustomersTable(): React.JSX.Element {
                       }}
                     >
                       <Stack spacing={1}>
-                        <RHFTextField name="name" label="Title" />
+                        <RHFTextField name="name" label="Nom" />
                       </Stack>
                       <Stack spacing={1}>
-                        <RHFTextField name="phone" label="Phone" />
+                        <RHFTextField name="phone" label="Telephone" />
                       </Stack>
                     </Box>
                   </Grid>
@@ -396,12 +396,12 @@ export function CustomersTable(): React.JSX.Element {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">Confirm Deletion</DialogTitle>
+        <DialogTitle id="alert-dialog-title">Confirmation de la suppression</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">Are you sure you want to delete?</DialogContentText>
+          <DialogContentText id="alert-dialog-description">Etes vous sur que vous voulez supprimer?</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setIsModalDelete(false)}>Cancel</Button>
+          <Button onClick={() => setIsModalDelete(false)}>Non</Button>
           <Button onClick={() => handleDeleteClick(selectedId)}>Yes</Button>
         </DialogActions>
       </Dialog>

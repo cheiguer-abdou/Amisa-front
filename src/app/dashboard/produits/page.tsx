@@ -23,7 +23,7 @@ import Produits from './produits';
 
 // const Modal = dynamic(() => import('@mui/material/Modal'), { ssr: false });
 
-export const metadata = { title: `Produits | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Produits | Dashboard | Amisa` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   // useClient();

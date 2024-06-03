@@ -138,11 +138,11 @@ export default function Users(): React.JSX.Element {
     <Stack spacing={3}>
       <Stack direction="row" spacing={3}>
         <Stack spacing={1} sx={{ flex: '1 1 auto' }}>
-          <Typography variant="h4">Users</Typography>
+          <Typography variant="h4">Employees</Typography>
         </Stack>
         <div>
           <Button startIcon={<PlusIcon fontSize="var(--icon-fontSize-md)" />} variant="contained" onClick={handleOpen}>
-            Add
+            Ajouter
           </Button>
         </div>
       </Stack>
@@ -157,7 +157,7 @@ export default function Users(): React.JSX.Element {
           <Card>
             <Box sx={style}>
               <h2 id="modal-modal-title" style={{ textAlign: 'center' }}>
-                Add User
+                Ajouter un Employee
               </h2>
               <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={2}>

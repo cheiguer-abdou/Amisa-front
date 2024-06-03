@@ -5,7 +5,7 @@ import { config } from '@/config';
 
 import Users from './users';
 
-export const metadata = { title: `Users | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Users | Dashboard | Amisa` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return <Users />;

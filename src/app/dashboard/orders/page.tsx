@@ -5,7 +5,7 @@ import { config } from '@/config';
 
 import Orders from './orders';
 
-export const metadata = { title: `Orders | Dashboard | ${config.site.name}` } satisfies Metadata;
+export const metadata = { title: `Orders | Dashboard | Amisa` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return <Orders />;

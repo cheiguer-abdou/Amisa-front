@@ -134,7 +134,7 @@ export default function Clients(): React.JSX.Element {
         </Stack>
         <div>
           <Button startIcon={<PlusIcon fontSize="var(--icon-fontSize-md)" />} variant="contained" onClick={handleOpen}>
-            Add
+            Ajouter
           </Button>
         </div>
       </Stack>
@@ -150,7 +150,7 @@ export default function Clients(): React.JSX.Element {
           <Card>
             <Box sx={style}>
               <h2 id="modal-modal-title" style={{ textAlign: 'center' }}>
-                Add Client
+                Ajouter Client
               </h2>
               <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={2}>

@@ -16,7 +16,7 @@ export function CustomersFilters({ filterClient, onFilterChange }: UserProps): R
         onChange={onFilterChange}
         defaultValue=""
         fullWidth
-        placeholder="Search Client"
+        placeholder="Rechercher un Client"
         startAdornment={
           <InputAdornment position="start">
             <MagnifyingGlassIcon fontSize="var(--icon-fontSize-md)" />
